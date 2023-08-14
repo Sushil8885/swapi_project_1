@@ -1,6 +1,7 @@
 from base import ResourceBase
 from utils.fetch_data import fetch_data
 
+
 class Characters(ResourceBase):
     """
     Resources class (plural)

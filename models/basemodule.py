@@ -15,6 +15,7 @@ class Base(BaseModel):
     edited: datetime
     url: str
 
+
 if __name__ == "__main__":
     data = {
         "created": "2014-12-09T13:50:51.644000Z",

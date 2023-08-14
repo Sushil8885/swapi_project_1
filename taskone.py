@@ -1,28 +1,23 @@
-"""
+"""The Star Wars API lists 82 main characters in the Star Wars saga. For the
+first task, we would like you to use a random number generator that picks a
+number between 1-82. Using these random numbers you will be pulling 15
+characters from the API using Python."""
 
-TASK / PROBLEM STATEMENT
-
-THe star wars API lists 82 characters in stars wars series. For the first task
-we have to create a random number generator. The random number generator should
-fetch numbers between 1-82. Using these random numbers we have to fetch random
-15 characters from API using `requests` lib.
-"""
 
 import requests
+
 from utils.randgen import ProduceChars
-from typing import List, Optional
-from models.datamodels.characters import Character
 
 start = 1
 stop = 83
 
 
-def get_chars(obj_: ProduceChars) -> Optional[List[int]]:
-    characters = []  # [1, 4, 5, 13, ....]
+def get_chars(obj_: ProduceChars):
+    characters_ = []  # [1, 4, 5, 13, ....]
     for i in obj_:
-        characters.append(i)
+        characters_.append(i)
 
-    return characters
+    return characters_
 
 
 if __name__ == "__main__":
@@ -37,12 +32,11 @@ if __name__ == "__main__":
     characters = get_chars(obj)
 
     print(f"[ INFO ] done - producing random 15 characters")
-    output = []
+
     for num_ in characters:
         absolute_url = home_url + relative.format(num_)
         print(f"fetching details using - {absolute_url}  =>\n")
         response = requests.get(absolute_url)
         response = response.json()
-        char_ = Character(**response)
-        print(char_)
+        print(response)
         print("######" * 25)
