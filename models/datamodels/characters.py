@@ -1,9 +1,3 @@
-"""
-
-"""
-
-
-from pydantic import BaseModel
 from typing import List, Optional
 from models.basemodule import Base
 
@@ -22,5 +16,3 @@ class Character(Base):
     starship: Optional[List[str]]
     films: Optional[List[str]]
     vehicles: Optional[List[str]]
-
-
