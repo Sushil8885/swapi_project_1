@@ -50,4 +50,3 @@ if __name__ == "__main__":
     print(obj.name)
     print("###" * 20)
     print(obj.model)
-
